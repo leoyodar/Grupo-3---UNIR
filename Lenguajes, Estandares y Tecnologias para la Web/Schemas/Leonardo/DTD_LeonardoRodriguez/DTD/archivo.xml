@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="archivo.xsd">>
+    <libro categoria="fantasia" id="book001" etiquetas="magia fantasia diversion">
+        <titulo>Harry Potter y la piedra filosofal</titulo>
+        <autor>J. K. Rowling</autor>
+        <anio>1997</anio>
+        <precio>400</precio>
+        <image src="recursos/harry.jpeg" alt="Harry Potter" width="300" height="450" />
+        <extra>
+            <nota>Fantasia</nota>
+            <nota>Buen libro</nota>
+            <nota>Mas vendidos &amp; best seller</nota>
+        </extra>
+    </libro>
+    <libro categoria="fantasia" id="book002" etiquetas="fantasia saga">
+        <titulo>Fuego y sangre</titulo>
+        <autor>George R. R. Martin</autor>
+        <anio>2018</anio>
+        <precio>799</precio>
+        <image src="recursos/fuego.jpeg" alt="Fuego y sangrens" width="300" height="450" />
+        <extra>
+            <nota>Fantasia</nota>
+        </extra>
+    </libro>
+    <libro categoria="fantasia" id="book003" etiquetas="fantasia adultos">
+        <titulo>El señor de los anillos</titulo>
+        <autor>J. R. R. Tolkien</autor>
+        <anio>1954</anio>
+        <precio>250</precio>
+        <image src="recursos/anillos.webp" alt="El señor de los anillos" width="300" height="450" />
+        <extra>
+            <nota>Fantasia</nota>
+            <nota>Libro Clasico</nota>
+        </extra>
+    </libro>
+    <libro categoria="fisica" id="book004" etiquetas="real fisica estudio escuela">
+        <titulo>El bosón de Higgs no te va a hacer la cama</titulo>
+        <autor>Javier Santaolalla</autor>
+        <anio>2016</anio>
+        <precio>1200</precio>
+        <image src="recursos/boson.jpg" alt="El bosón de Higgs no te va a hacer la cama" width="300" height="450" />
+        <extra>
+            <nota>Fisica</nota>
+            <nota>Ciencia</nota>
+        </extra>
+    </libro>
+    <libro categoria="novela" id="book005" etiquetas="clasico fantasia virtual">
+        <titulo>Los astronautas</titulo>
+        <autor>Stanislaw Lem</autor>
+        <anio>1951</anio>
+        <precio>100</precio>
+        <image src="recursos/astronautas.jpg" alt="Los astronautas" width="300" height="450" />
+        <extra>
+            <nota>Novela</nota>
+            <nota>Clasico</nota>
+        </extra>
+    </libro>
+
+    <cliente id="cliente001" referido="cliente001" status="activo">
+        <nombre>Juan</nombre>
+        <direccion>123 calle 1</direccion>
+    </cliente>
+    <cliente id="cliente002" referido="cliente001" status="inactivo">
+        <nombre>Maria</nombre>
+        <direccion>456 calle 3</direccion>
+    </cliente>
+    <cliente id="cliente003" referido="cliente002" status="suspendido">
+        <nombre>Jhon</nombre>
+        <direccion>789 calle 2</direccion>
+    </cliente>
+</libreria>

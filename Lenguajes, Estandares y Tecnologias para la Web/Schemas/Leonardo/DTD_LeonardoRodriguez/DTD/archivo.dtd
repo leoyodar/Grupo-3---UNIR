@@ -1,0 +1,32 @@
+<!ELEMENT libreria (libro*, cliente*)>
+<!ELEMENT libro (titulo, autor, anio, precio, image?, extra)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT precio ANY>
+<!ELEMENT image EMPTY>
+<!ELEMENT extra (nota+)>
+<!ELEMENT nota (#PCDATA)>
+
+<!ATTLIST libro
+    categoria NMTOKEN #REQUIRED
+    id ID #REQUIRED
+    etiquetas NMTOKENS #IMPLIED
+>
+
+<!ATTLIST image
+    src CDATA #REQUIRED
+    alt CDATA #IMPLIED
+    width CDATA #IMPLIED
+    height CDATA #IMPLIED
+>
+
+<!ELEMENT cliente (nombre, direccion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+
+<!ATTLIST cliente
+    id ID #REQUIRED
+    referido IDREF #IMPLIED
+    status (activo | inactivo | suspendido) #IMPLIED
+>
