@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="pedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="productos" type="productosType"/>
+        <xs:element name="direccion-envio" type="direccionEnvioType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="idPedido" type="xs:ID" use="required"/>
+      <xs:attribute name="cliente" type="xs:NMTOKEN" use="required"/>
+      <xs:attribute name="entrega" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="envio"/>
+            <xs:enumeration value="recoger"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="productosType">
+    <xs:sequence>
+      <xs:element name="producto" type="productoType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="productoType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="precio" type="xs:string"/>
+      <xs:element name="image" type="imageType"/>
+      <xs:element name="descuento" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="idProducto" type="xs:ID" use="required"/>
+    <xs:attribute name="idPedido" type="xs:IDREF" use="required"/>
+    <xs:attribute name="tags" type="xs:NMTOKENS" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="imageType">
+    <xs:attribute name="src" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="direccionEnvioType">
+    <xs:sequence>
+      <xs:element name="calle" type="xs:string"/>
+      <xs:element name="numero" type="xs:string"/>
+      <xs:element name="ciudad" type="xs:string"/>
+      <xs:element name="estado" type="xs:string"/>
+      <xs:element name="pais" type="xs:string"/>
+      <xs:element name="cp" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="tipo" type="xs:NMTOKEN" use="required"/>
+  </xs:complexType>
+</xs:schema>

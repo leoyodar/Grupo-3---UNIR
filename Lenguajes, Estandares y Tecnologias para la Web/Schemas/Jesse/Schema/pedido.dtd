@@ -1,0 +1,31 @@
+
+    <!ELEMENT pedido (productos, direccion-envio*)>
+    <!ATTLIST pedido
+        idPedido ID #REQUIRED
+        cliente NMTOKEN #REQUIRED
+        entrega (envio | recoger) #REQUIRED
+    >
+    <!ELEMENT productos (producto+)>
+    <!ELEMENT producto (nombre, precio,image,descuento?)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT precio (#PCDATA)>
+    <!ELEMENT image EMPTY>
+    <!ATTLIST image
+       src CDATA #REQUIRED
+    >
+    <!ELEMENT descuento (#PCDATA)>
+    <!ATTLIST producto
+        idProducto ID #REQUIRED
+        idPedido IDREF #REQUIRED
+        tags NMTOKENS #IMPLIED
+    >
+    <!ELEMENT direccion-envio (calle,numero, ciudad, estado, pais,cp)>
+    <!ELEMENT calle (#PCDATA)>
+    <!ELEMENT numero (#PCDATA)>
+    <!ELEMENT ciudad (#PCDATA)>
+    <!ELEMENT estado (#PCDATA)>
+    <!ELEMENT pais (#PCDATA)>
+    <!ELEMENT cp (#PCDATA)>
+    <!ATTLIST direccion-envio
+        tipo NMTOKEN #REQUIRED
+    >   

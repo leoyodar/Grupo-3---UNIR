@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="pedido.xsd" idPedido="Pedido1" cliente="Cliente1" entrega="envio">
+  <productos>
+    <producto idProducto="Producto1"  idPedido="Pedido1" tags="oferta especial">
+      <nombre>Lampara Colgante</nombre>
+      <precio>700</precio>
+     <image src="recursos/lamparaColgante.jpg"/>
+    </producto>
+    <producto idProducto="Producto2"  idPedido="Pedido1" tags="2 x 1">
+      <nombre>Lampara Led</nombre>
+      <precio>300</precio>
+     <image src="recursos/lamparaLed.jpg"/>
+     <descuento>150</descuento>
+    </producto>
+  </productos>
+  <direccion-envio tipo="residencial">
+    <calle>Av Reforma</calle>
+    <numero>102</numero>
+    <ciudad>CDMX</ciudad>
+    <estado>CDMX</estado>
+    <pais>Mexico</pais>
+    <cp>13200</cp>
+  </direccion-envio>
+</pedido>
