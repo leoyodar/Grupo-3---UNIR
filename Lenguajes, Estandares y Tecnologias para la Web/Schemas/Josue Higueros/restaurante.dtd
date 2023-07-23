@@ -1,0 +1,30 @@
+<!ELEMENT restaurante (nombre, ubicacion, plato+, empleado+, galeria?, video?)>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT ubicacion (#PCDATA)>
+<!ELEMENT plato (nombre, tipo, precio, descripcion?, imagen+)>
+<!ELEMENT empleado (nombre, edad, cargo, salario)>
+<!ELEMENT galeria (imagen+)>
+<!ELEMENT video EMPTY>
+
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT imagen EMPTY>
+<!ATTLIST imagen
+    src CDATA #REQUIRED
+    tipo (jpg|png|gif) "jpg">
+
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT cargo (#PCDATA)>
+<!ELEMENT salario (#PCDATA)>
+
+<!ATTLIST plato
+    id ID #REQUIRED>
+
+<!ATTLIST empleado
+    id ID #REQUIRED>
+
+<!ATTLIST video
+    src CDATA #REQUIRED
+    tipo CDATA #REQUIRED>

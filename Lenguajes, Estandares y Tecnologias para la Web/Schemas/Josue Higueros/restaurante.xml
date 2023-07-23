@@ -1,0 +1,60 @@
+<!DOCTYPE restaurante [
+<!ELEMENT restaurante (nombre, ubicacion, plato+, empleado+, galeria?, video?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT ubicacion (#PCDATA)>
+<!ELEMENT plato (nombre, tipo, precio, descripcion?, imagen+)>
+<!ELEMENT empleado (nombre, edad, cargo, salario)>
+<!ELEMENT galeria (imagen+)>
+<!ELEMENT video EMPTY>
+
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT imagen EMPTY>
+<!ATTLIST imagen
+    src CDATA #REQUIRED
+    tipo (jpg|png|gif) "jpg">
+
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT cargo (#PCDATA)>
+<!ELEMENT salario (#PCDATA)>
+
+<!ATTLIST plato
+    id ID #REQUIRED>
+
+<!ATTLIST empleado
+    id ID #REQUIRED>
+
+<!ATTLIST video
+    src CDATA #REQUIRED
+    tipo CDATA #REQUIRED>
+]>
+
+<restaurante>
+    <nombre>Nombre del Restaurante</nombre>
+    <ubicacion>Dirección del Restaurante</ubicacion>
+    <plato id="plato1">
+        <nombre>Nombre del Plato 1</nombre>
+        <tipo>Tipo del Plato 1</tipo>
+        <precio>Precio del Plato 1</precio>
+        <imagen src="imagen1.jpg" tipo="jpg"/>
+    </plato>
+    <plato id="plato2">
+        <nombre>Nombre del Plato 2</nombre>
+        <tipo>Tipo del Plato 2</tipo>
+        <precio>Precio del Plato 2</precio>
+        <descripcion>Descripción del Plato 2</descripcion>
+        <imagen src="imagen2.png" tipo="png"/>
+    </plato>
+    <empleado id="empleado1">
+        <nombre>Nombre del Empleado 1</nombre>
+        <edad>Edad del Empleado 1</edad>
+        <cargo>Cargo del Empleado 1</cargo>
+        <salario>Salario del Empleado 1</salario>
+    </empleado>
+    <galeria>
+        <imagen src="galeria_imagen1.gif" tipo="gif"/>
+        <imagen src="galeria_imagen2.jpg" tipo="jpg"/>
+    </galeria>
+    <video src="video1.mp4" tipo="mp4"/>
+</restaurante>
