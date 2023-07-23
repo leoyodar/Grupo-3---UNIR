@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="todolist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="todo" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="description" type="xs:string"/>
+              <xs:element name="datecreated" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="value" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="status">
+                <xs:complexType>
+                  <xs:attribute name="type">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="done"/>
+                        <xs:enumeration value="todo"/>
+                        <xs:enumeration value="doing"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="duedate" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="value" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="todoauthor">
+                <xs:complexType>
+                  <xs:attribute name="author" type="xs:IDREF" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="author" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="imagen">
+                <xs:complexType>
+                  <xs:attribute name="src" type="xs:anyURI" use="required"/>
+                  <xs:attribute name="alt" type="xs:string" use="optional"/>
+                  <xs:attribute name="width" type="xs:string" use="optional"/>
+                  <xs:attribute name="height" type="xs:string" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

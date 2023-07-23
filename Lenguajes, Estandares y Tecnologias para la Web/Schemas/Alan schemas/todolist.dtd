@@ -1,0 +1,21 @@
+        <!ELEMENT todolist (todo*, author+)>
+        <!ELEMENT todo (name, description, datecreated?, status, duedate?, todoauthor)>
+        <!ATTLIST todo id ID #REQUIRED>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT datecreated EMPTY>
+        <!ATTLIST datecreated value CDATA #REQUIRED>
+        <!ELEMENT status EMPTY>
+        <!ATTLIST status type (done|unstarted|doing) #REQUIRED>
+        <!ELEMENT todoauthor EMPTY>
+        <!ATTLIST todoauthor author IDREF #REQUIRED>
+        <!ELEMENT duedate EMPTY>
+        <!ATTLIST duedate value CDATA #REQUIRED>
+        <!ENTITY alan "Alan David Nungaray Becerra">
+        <!ELEMENT author (name, imagen)>
+        <!ATTLIST author id ID #REQUIRED>
+        <!ELEMENT imagen EMPTY>
+        <!ATTLIST imagen src CDATA #REQUIRED
+                alt CDATA #IMPLIED
+                width CDATA #IMPLIED
+                height CDATA #IMPLIED>

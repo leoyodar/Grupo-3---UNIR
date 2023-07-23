@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<todolist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="todolist.xsd" >
+    <todo id="t-1">
+        <name>Revisar correos</name>
+        <description>Antes de cualquier actividad debo leer mis correos</description>
+        <datecreated value="10-12-2023"/>
+        <status type="doing"/>
+        <duedate value="05-03-2022"/>
+        <todoauthor author="a-1"/>
+    </todo>
+    <todo id="t-2">
+        <name>Enviar correos</name>
+        <description>Enviar correos de con la información de la reunion</description>
+        <datecreated value="03-23-2023"/>
+        <status type="todo"/>
+        <todoauthor author="a-1"/>
+    </todo>
+    <author id="a-1">
+        <name>Ana Doe</name>
+        <imagen src="./recursos/picture-1.jpeg"/>
+    </author>
+    <author id="a-2">
+        <name>John Doe</name>
+        <imagen src="./recursos/picture-2.webp"/>
+    </author>
+</todolist>
