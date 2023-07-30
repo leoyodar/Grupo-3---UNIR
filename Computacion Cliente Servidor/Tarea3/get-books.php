@@ -1,20 +1,9 @@
 <?php
-// Conexion bd
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bookstore";
+require 'dbBook.php';
+include_once 'config.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificacion
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
-
-// Consulta de libros
-$sql = "SELECT * FROM book";
-$result = $conn->query($sql);
+$dbBook= new DbBook(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$result = $dbBook->getBooks();
 
 if ($result && $result->num_rows > 0) {
     // Renderiza una lista de libros
@@ -24,6 +13,4 @@ if ($result && $result->num_rows > 0) {
 } else {
     echo "No se encontraron libros";
 }
-
-$conn->close();
 ?>
